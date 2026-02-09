@@ -2,33 +2,44 @@
 
 ## Project Title
 
-Salon Booking Website (Stylist Appointment Platform)
+**Gents Salon & Spa Website**
+(Premium Grooming & Appointment Inquiry Platform)
+
+---
 
 ## Overview
 
-The Salon Booking Website is a web-based platform designed for hair stylists and salon owners to showcase their services, manage appointments, receive booking notifications via email, display portfolios, publish blog content, collect customer reviews, and show their business location on a map.
+The **Gents Salon & Spa Website** is a **luxury marketing and appointment inquiry website** designed to position the brand as a **premium men’s grooming and spa destination**.
 
-The platform will be built using **HTML, CSS, and JavaScript (Vanilla JS)** and will serve as a reusable base template for salon-related websites.
+The website focuses on showcasing services, gallery, unique benefits, brand promise, reviews, and location, while enabling **easy appointment inquiries through call-to-action buttons and contact channels** rather than a full online booking system.
+
+The platform will be built using **HTML, CSS, JavaScript (Vanilla JS)** with **PHP used only for contact and inquiry email handling**.
 
 ---
 
 ## Goals
 
-* Allow customers to book salon appointments online
-* Automatically send booking details to stylists via email
-* Provide a professional online presence for stylists
-* Enable customers to view services, portfolio, and reviews
-* Display salon location using an interactive map
-* Provide a scalable base template for future enhancements
+* Establish a strong **luxury brand identity**
+* Showcase grooming and spa services with detailed descriptions
+* Highlight portfolio, ambiance, and real results
+* Build trust using reviews and brand promise
+* Encourage visitors to **contact or request appointments**
+* Provide a clean, mobile-first, high-performance website
 
 ---
 
 ## Target Users
 
-* Salon owners
-* Independent hair stylists
-* Barbers
-* Customers seeking salon services
+### Primary Users
+
+* Men aged **20–55**
+* Professionals who value grooming and appearance
+* Luxury grooming and spa service seekers
+
+### Secondary Users
+
+* First-time visitors comparing salons
+* Returning customers checking services, gallery, or opening hours
 
 ---
 
@@ -36,141 +47,207 @@ The platform will be built using **HTML, CSS, and JavaScript (Vanilla JS)** and 
 
 ### 1. Homepage
 
-**Purpose:** First impression and navigation hub
+**Purpose:** First impression and brand positioning
 
 **Components:**
 
-* Hero section (headline + CTA button)
-* About the salon/stylist
-* Featured services
-* Call-to-action for booking
-* Testimonials preview
-* Footer
+* Hero section
+
+  * Headline: *Luxury Grooming for the Modern Gentleman*
+  * Subtext emphasizing premium experience
+* Primary CTA buttons
+
+  * Book Appointment
+  * Explore Our Services
+* Services preview
+
+  * Haircuts & Styling
+  * Beard Grooming & Sculpting
+  * Luxury Shaves & Line-Ups
+  * Hair & Scalp Treatments
+  * Spa & Relaxation Treatments
+  * Grooming Packages
+* Gallery preview (real results & ambiance)
+* Unique benefits section
+
+  * Skilled professionals
+  * Luxurious environment
+  * Premium products
+  * Personalized consultations
+  * Hygiene & comfort
+* Reviews & testimonials preview
+* Brand promise section
+* Opening hours
+* Footer (contact info & quick links)
 
 ---
 
 ### 2. Services Page
 
-**Purpose:** Display all salon services
+**Purpose:** Detailed service presentation
 
 **Features:**
 
-* List of services (haircut, braiding, coloring, treatment, etc.)
-* Pricing (optional)
-* Service description
-* Book Now button
+* Service categories with descriptions:
+
+  * Haircuts & Styling (tailored to face shape)
+  * Beard Grooming & Sculpting
+  * Luxury Shaves & Line-Ups
+  * Hair & Scalp Treatments
+  * Spa & Relaxation Treatments
+  * Complete Grooming Packages
+* Each service includes:
+
+  * Short description
+  * Value proposition
+* CTA buttons:
+
+  * Read More
+  * Book Appointment (leads to Contact page)
 
 ---
 
-### 3. Appointment Booking System
+### 3. Appointment Inquiry Flow
 
-**Purpose:** Allow customers to book appointments
+**Purpose:** Enable easy booking requests (no online scheduling)
 
-**Booking Form Fields:**
+**Approach:**
+
+* CTA buttons redirect users to:
+
+  * Contact form
+  * Phone call
+  * WhatsApp link (optional)
+
+**Inquiry Form Fields:**
 
 * Full name
 * Email address
 * Phone number
-* Selected service
-* Preferred date
-* Preferred time
-* Additional notes
+* Service of interest
+* Preferred date/time (optional)
+* Message
 
 **Functionality:**
 
-* Form validation
-* Email notification sent to stylist
-* Booking confirmation message
+* Client-side validation
+* PHP-based email submission
+* Confirmation message after submission
 
 ---
 
-### 4. Email Notification System
+### 4. Email Handling System
 
-**Purpose:** Notify stylists of new bookings
+**Purpose:** Notify salon staff of appointment inquiries
 
 **Details:**
 
-* Booking details sent to stylist email
-* Includes customer name, service, date, and time
+* Inquiry details sent to salon email
+* Includes customer contact info and requested service
 
 **Implementation:**
 
-* PHP (server-side email handling) — form submits to a PHP script that sends mail via `mail()` or SMTP (e.g. PHPMailer)
+* PHP server-side email handling
+* Uses `mail()` or SMTP (PHPMailer recommended for production)
 
 ---
 
 ### 5. Portfolio / Gallery
 
-**Purpose:** Showcase stylist work
+**Purpose:** Showcase results and environment
 
 **Features:**
 
-* Image gallery
-* Before & after photos
-* Responsive grid layout
-* Lightbox preview
+* High-resolution images:
+
+  * Haircuts
+  * Beard grooming
+  * Spa treatments
+  * Salon interior
+* Layout:
+
+  * Responsive grid or carousel
+* Optional lightbox view
+* CTA:
+
+  * View Gallery
+  * Book Appointment
 
 ---
 
-### 6. Blog Section
+### 6. Reviews & Testimonials
 
-**Purpose:** Share updates, tips, and promotions
+**Purpose:** Build trust and credibility
 
 **Features:**
 
-* Blog listing page
-* Blog detail page
-* Static blog posts (HTML-based)
-* Categories (optional)
+* Static customer testimonials
+* Star ratings display
+* Highlighted premium feedback
+* Positioned on:
+
+  * Homepage
+  * Services page
 
 ---
 
-### 7. Reviews & Ratings
+### 7. About Page
 
-**Purpose:** Build trust
+**Purpose:** Communicate brand story and values
 
-**Features:**
+**Content:**
 
-* Customer reviews section
-* Star ratings
-* Static or form-based reviews
-* Display recent reviews
+* Brand story:
+
+  * *Founded to redefine men’s grooming and relaxation*
+* Philosophy:
+
+  * Premium quality
+  * Professional standards
+  * Respect for personal style
+  * Relaxing, luxury experience
+* Reinforcement of brand promise
 
 ---
 
-### 8. Contact Us Page
+### 8. Contact Page
 
-**Purpose:** Allow communication
+**Purpose:** Enable communication and inquiries
 
 **Features:**
 
-* Contact form
-* Email address
+* Contact form (PHP email handling)
+* Salon address
 * Phone number
-* Social media links
-* Business hours
+* Email address
+* Opening hours:
+
+  * Mon–Sat: 9AM–8PM
+  * Sun: 10AM–6PM
+* Embedded location map
 
 ---
 
 ### 9. Location Map
 
-**Purpose:** Show stylist or salon location
+**Purpose:** Show salon location clearly
 
 **Features:**
 
-* Google Maps or OpenStreetMap
-* Embedded map
+* Embedded Google Maps or OpenStreetMap
 * Marker showing salon location
+* Responsive embed
 
 ---
 
 ## Non-Functional Requirements
 
-* Fully responsive design
-* Mobile-first layout
-* Cross-browser compatibility
+* Fully responsive (mobile-first)
 * Fast loading performance
-* Clean UI/UX
+* Luxury black & gold color scheme
+* Clean, minimal UI/UX
+* Cross-browser compatibility
+* Accessible typography and contrast
 
 ---
 
@@ -179,34 +256,31 @@ The platform will be built using **HTML, CSS, and JavaScript (Vanilla JS)** and 
 * HTML5
 * CSS3
 * JavaScript (Vanilla)
-* PHP (server-side email handling for booking and contact forms)
-* Google Maps / OpenStreetMap
+* PHP (contact & inquiry emails only)
+* Google Maps / OpenStreetMap embed
 
 ---
 
 ## Folder Structure (Base Template)
 
 ```
-salon-website/
+gents-salon-spa/
 │
 ├── index.html
+├── about.html
 ├── services.html
-├── booking.html
-├── portfolio.html
-├── blog.html
+├── gallery.html
 ├── contact.html
 │
 ├── assets/
 │   ├── css/
 │   │   └── style.css
 │   ├── js/
-│   │   ├── main.js
-│   │   └── booking.js
+│   │   └── main.js
 │   └── images/
 │
-├── api/                    (or php/ — server-side email)
-│   ├── send-booking.php    (handles booking form POST, sends email)
-│   └── send-contact.php    (optional: contact form)
+├── php/
+│   └── send-inquiry.php
 │
 ├── PRD.md
 ├── POSTAL.md
@@ -215,25 +289,31 @@ salon-website/
 
 ---
 
-## Future Enhancements
+## Out of Scope (Phase 1)
 
+* Online booking calendar
+* Payments
 * Admin dashboard
-* Booking calendar system
-* Payment integration
-* User authentication
-* Backend (Node.js / PHP)
+* User accounts
+* Blog or CMS
+* Loyalty programs
 
 ---
 
 ## Success Metrics
 
-* Successful appointment submission
-* Email delivery confirmation
-* User engagement on services and portfolio
+* Click-through rate on “Book Appointment” CTAs
+* Time spent on Services and Gallery pages
+* Inquiry form submissions
 * Mobile usability score
+* Page load speed
 
 ---
 
 ## Approval
 
-This PRD serves as the foundational specification for building the Salon Booking Website template.
+This PRD defines the functional and visual scope of the **Gents Salon & Spa Website** and serves as the foundation for design and development.
+
+---
+
+

@@ -1,6 +1,6 @@
 /**
- * Beauty Salon – contact.js
- * Contact form validation and submit to PHP
+ * Gents Salon & Spa – contact.js
+ * Inquiry form validation and submit to PHP
  */
 (function () {
   "use strict";
@@ -33,17 +33,19 @@
   function validate() {
     var name = (form.querySelector('[name="name"]') || {}).value || "";
     var email = (form.querySelector('[name="email"]') || {}).value || "";
-    var subject = (form.querySelector('[name="subject"]') || {}).value || "";
+    var phone = (form.querySelector('[name="phone"]') || {}).value || "";
     var message = (form.querySelector('[name="message"]') || {}).value || "";
 
     setError("contact-name", "");
     setError("contact-email", "");
-    setError("contact-subject", "");
+    setError("contact-phone", "");
+    setError("contact-service", "");
+    setError("contact-datetime", "");
     setError("contact-message", "");
 
     var valid = true;
     if (!name.trim()) {
-      setError("contact-name", "Please enter your name.");
+      setError("contact-name", "Please enter your full name.");
       valid = false;
     }
     if (!email.trim()) {
@@ -53,8 +55,8 @@
       setError("contact-email", "Please enter a valid email.");
       valid = false;
     }
-    if (!subject.trim()) {
-      setError("contact-subject", "Please enter a subject.");
+    if (!phone.trim()) {
+      setError("contact-phone", "Please enter your phone number.");
       valid = false;
     }
     if (!message.trim()) {
@@ -80,7 +82,7 @@
     }
 
     var formData = new FormData(form);
-    var action = form.getAttribute("action") || "api/send-contact.php";
+    var action = form.getAttribute("action") || "api/send-inquiry.php";
 
     fetch(action, {
       method: "POST",
@@ -115,7 +117,7 @@
       .finally(function () {
         if (submitBtn) {
           submitBtn.disabled = false;
-          submitBtn.textContent = "Submit";
+          submitBtn.textContent = "Send Inquiry";
         }
       });
   });

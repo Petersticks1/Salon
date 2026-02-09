@@ -21063,4 +21063,27 @@ footer .copyright-bar .border-top {
     display: none;
   }
 }
+
+/* Hero slider logo – display as white */
+.hero-logo-white {
+  filter: brightness(0) invert(1);
+}
+
+/* Site logo – small size (match previous logo) */
+.site-logo-header {
+  max-height: 48px;
+  width: auto;
+  object-fit: contain;
+}
+.site-logo-footer {
+  max-height: 52px;
+  width: auto;
+  object-fit: contain;
+}
+
+/* Footer logo: white */
+.footer-section .site-logo-footer {
+  filter: brightness(0) invert(1);
+}
+
 /*# sourceMappingURL=style.css.map */

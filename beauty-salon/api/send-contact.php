@@ -13,7 +13,7 @@ if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
   exit;
 }
 
-$contact_email = 'hello@beautysalon.com';
+$contact_email = 'hello@altair-attic.com';
 
 // Get and sanitize: strip HTML/scripts, trim
 $name    = isset($_POST['name'])    ? trim(strip_tags((string) $_POST['name']))    : '';

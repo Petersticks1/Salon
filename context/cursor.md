@@ -1,251 +1,332 @@
-# cursor.md
 
-## Purpose
 
-This document serves as a **personal implementation and development guide**. It explains how to translate the PRD into actual code using HTML, CSS, and JavaScript.
+# POSTAL.md
 
-POSTAL = *Personal Operational Steps and Technical Action Log*
+**Personal Operational & Technical Action Log**
+
+## Project
+
+**Gents Salon & Spa – Premium Marketing & Appointment Inquiry Website**
 
 ---
 
-## 1. Project Setup
+## 1. Purpose of This Document
 
-### Step 1: Create Project Folder
+This document explains **how to build the Gents Salon & Spa website step-by-step**, translating the PRD into **practical development actions**.
+
+It is written as a **developer guide**, not a client document.
+
+---
+
+## 2. Development Philosophy
+
+* Marketing-first (luxury branding)
+* No admin panel
+* No online booking system
+* Appointment requests via **contact & inquiry forms**
+* Mobile-first
+* Clean, premium UI (black & gold theme)
+* Simple PHP backend only for emails
+
+---
+
+## 3. Project Setup
+
+### 3.1 Folder Structure
+
+Create the following structure:
 
 ```
-salon-website/
+gents-salon-spa/
+│
+├── index.html
+├── about.html
+├── services.html
+├── gallery.html
+├── contact.html
+│
+├── assets/
+│   ├── css/
+│   │   └── style.css
+│   ├── js/
+│   │   └── main.js
+│   └── images/
+│
+├── php/
+│   └── send-inquiry.php
+│
+├── PRD.md
+├── POSTAL.md
+└── README.md
 ```
 
-### Step 2: Create Required Files
+---
 
-* index.html
-* services.html
-* booking.html
-* portfolio.html
-* blog.html
-* contact.html
-* assets/css/style.css
-* assets/js/main.js
-* assets/js/booking.js
+## 4. Global Website Setup
+
+### 4.1 HTML Boilerplate
+
+* Use semantic HTML:
+
+  * `<header>`
+  * `<nav>`
+  * `<main>`
+  * `<section>`
+  * `<footer>`
+* Keep navigation consistent across all pages
+* Include:
+
+  * Meta viewport
+  * SEO-friendly title & description
 
 ---
 
-## 2. HTML Structure Guide
+### 4.2 Global Styling (CSS)
 
-### Common Layout (All Pages)
+**Design Direction**
 
-* Header
+* Primary colors:
 
-  * Logo
-  * Navigation menu
-* Main content
-* Footer
+  * Black (#000 or near-black)
+  * Gold (#C9A24D or similar)
+* Typography:
 
-Use the same header and footer across all pages for consistency.
+  * Elegant serif or modern sans-serif
+* Large spacing
+* Minimal shadows
+* Premium look
 
----
+**CSS Structure**
 
-## 3. Homepage Implementation
-
-### Sections
-
-* Hero section
-* About stylist
-* Featured services
-* Testimonials
-* CTA booking button
-
-**Goal:** Convert visitors into customers.
+* Reset / base styles
+* Typography
+* Layout (flexbox & grid)
+* Buttons & CTAs
+* Page-specific sections
+* Media queries (mobile-first)
 
 ---
 
-## 4. Services Page Logic
-
-* Create service cards using HTML
-* Style with CSS grid or flexbox
-* Each service includes:
-
-  * Image
-  * Title
-  * Description
-  * Book button
+## 5. Page-by-Page Implementation
 
 ---
 
-## 5. Booking System Implementation
+## 5.1 Homepage (`index.html`)
 
-### booking.html
+### Sections to Build
 
-Create a form with:
+1. **Hero Section**
+
+   * Headline: *Luxury Grooming for the Modern Gentleman*
+   * Short description
+   * CTA buttons:
+
+     * Book Appointment
+     * Explore Our Services
+
+2. **Services Preview**
+
+   * Cards or grid layout
+   * Show 4–6 key services
+   * Each with icon/image + title
+
+3. **Gallery Preview**
+
+   * 3–6 high-quality images
+   * CTA: View Gallery
+
+4. **Unique Benefits**
+
+   * List brand advantages
+   * Icons recommended
+
+5. **Reviews**
+
+   * Static testimonials
+   * Star ratings (CSS-based)
+
+6. **Brand Promise**
+
+   * Short mission statement
+
+7. **Opening Hours**
+
+   * Clearly displayed
+
+---
+
+## 5.2 About Page (`about.html`)
+
+### Content Implementation
+
+* Brand story
+* Mission & values
+* Reinforce luxury & professionalism
+* Minimal imagery
+* Emphasize trust and experience
+
+---
+
+## 5.3 Services Page (`services.html`)
+
+### Structure
+
+* Page hero title
+* Service sections:
+
+  * Haircuts & Styling
+  * Beard Grooming & Sculpting
+  * Luxury Shaves & Line-Ups
+  * Hair & Scalp Treatments
+  * Spa & Relaxation
+  * Grooming Packages
+
+### Each Service Includes
 
 * Name
-* Email
-* Phone
-* Service
-* Date
-* Time
-* Message
+* Description
+* Value proposition
+* CTA button:
 
-### booking.js
-
-Responsibilities:
-
-* Validate form inputs (client-side)
-* Submit form data to PHP endpoint (e.g. `POST` to `send-booking.php`)
-* Display success or error message from server response
-
-Example flow:
-
-1. User submits form
-2. JavaScript validates
-3. Form is submitted to PHP script (server-side)
-4. PHP sends booking email to stylist (e.g. via `mail()` or PHPMailer)
-5. PHP returns JSON success/error; confirmation message shown
+  * “Book Appointment” → links to Contact page
 
 ---
 
-## 6. Email Integration (PHP Server-Side)
+## 5.4 Gallery Page (`gallery.html`)
 
-Steps:
+### Implementation
 
-1. Create a PHP script (e.g. `send-booking.php` or `api/send-booking.php`) that:
-   * Accepts `POST` data (name, email, phone, service, date, time, notes)
-   * Validates/sanitizes input
-   * Sends email to stylist using PHP `mail()` or a library such as PHPMailer (recommended for SMTP/reliability)
-   * Returns JSON `{ "success": true }` or `{ "success": false, "message": "..." }`
-2. Ensure the server has PHP and (if using SMTP) correct mail/SMTP configuration
-3. Point the booking form `action` to the PHP script, or use `fetch()`/`XMLHttpRequest` from booking.js to POST and handle the response
-
-This enables stylists to receive booking notifications directly in their email inbox without exposing client-side API keys.
+* Grid or masonry layout
+* High-resolution images
+* Optional JS lightbox
+* Lazy loading for performance
+* CTA at bottom: Book Appointment
 
 ---
 
-## 7. Portfolio Page
+## 5.5 Contact Page (`contact.html`)
 
-* Use image gallery layout
-* Store images in assets/images
-* Use CSS grid
-* Optional lightbox effect with JS
+### Contact Info Section
 
----
-
-## 8. Blog Page
-
-* Static blog cards
-* Each blog links to blog detail page
-* Content written directly in HTML
-
-Future upgrade: dynamic CMS.
-
----
-
-## 9. Reviews Section
-
-Implementation options:
-
-* Static testimonials
-* Form-based reviews saved temporarily
-
-Fields:
-
-* Name
-* Rating
-* Comment
-
-Display reviews dynamically using JavaScript.
-
----
-
-## 10. Contact Page
-
-Includes:
-
-* Contact form
+* Address
 * Phone number
 * Email
-* Social links
+* Opening hours
 
-Optional: use the same PHP email endpoint (or a contact-specific script) for contact form messages.
+### Inquiry Form Fields
 
----
+* Full Name
+* Email
+* Phone
+* Service of Interest
+* Preferred Date/Time (optional)
+* Message
 
-## 11. Map Integration
+### CTA
 
-Options:
-
-* Google Maps embed
-* OpenStreetMap iframe
-
-Steps:
-
-1. Get salon coordinates
-2. Embed map iframe
-3. Style container responsively
+* “Send Inquiry”
 
 ---
 
-## 12. Styling Guide
+## 6. JavaScript (`main.js`)
 
-* Use consistent colors
-* Use modern typography
-* Mobile-first design
-* Reusable CSS classes
+### Responsibilities
 
----
+* Mobile menu toggle
+* Basic form validation
+* UI interactions (hover effects, animations)
+* Optional gallery lightbox logic
 
-## 13. JavaScript Responsibilities
-
-main.js
-
-* Navbar toggle
-* Scroll effects
-* Animations
-
-booking.js
-
-* Appointment form handling
-* Client-side validation
-* Submitting form data to PHP endpoint and handling response
+⚠️ No heavy JS frameworks.
 
 ---
 
-## 14. Testing Checklist
+## 7. PHP Email Handling
 
-* Form validation works
-* Email received successfully
-* Responsive on mobile
-* Links functional
-* Map loads correctly
+### File: `php/send-inquiry.php`
 
----
+### Responsibilities
 
-## 15. Deployment
+* Receive POST form data
+* Sanitize inputs
+* Send email to salon email address
+* Return success or error response
 
-Options:
+### Flow
 
-* Netlify
-* GitHub Pages
-* Vercel
+1. User submits form
+2. Data sent via POST to `send-inquiry.php`
+3. PHP sends email
+4. User sees success message
 
-Steps:
+### Recommendation
 
-1. Push to GitHub
-2. Connect hosting
-3. Deploy
-
----
-
-## 16. Personal Notes Section
-
-Use this section to document:
-
-* Errors faced
-* Fixes applied
-* Improvements
-* New ideas
+* Use **PHPMailer + SMTP** for production hosting
+* Use `mail()` only for local testing
 
 ---
 
-## End
+## 8. Map Integration
 
-This cursor.md acts as your personal development handbook for building and maintaining the salon booking website template.
+### Implementation
+
+* Use Google Maps or OpenStreetMap embed
+* Place map on Contact page
+* Responsive iframe
+
+---
+
+## 9. Responsiveness & Testing
+
+### Test On:
+
+* Mobile phones
+* Tablets
+* Desktop
+
+### Checklist
+
+* Navigation works on mobile
+* CTAs are visible and clickable
+* Forms submit correctly
+* Images optimized
+* Fast loading speed
+
+---
+
+## 10. Deployment
+
+### Hosting Requirements
+
+* PHP-enabled hosting
+* Email sending support
+* SSL certificate
+
+### Steps
+
+1. Upload files via FTP / Git
+2. Configure email in PHP
+3. Test inquiry form
+4. Final QA
+
+---
+
+## 11. Phase 2 (Optional – Not Implemented)
+
+* Admin dashboard
+* Online booking calendar
+* Payments
+* Blog
+* CMS
+
+---
+
+## 12. Final Notes
+
+This POSTAL acts as:
+
+* A **personal development guide**
+* A **repeatable template**
+* A **reference for future salon projects**
+
+---

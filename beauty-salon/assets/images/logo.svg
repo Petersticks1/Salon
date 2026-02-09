@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 48" width="320" height="48" aria-hidden="true">
+  <defs>
+    <linearGradient id="gold" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#C9A962"/>
+      <stop offset="100%" style="stop-color:#8B6914"/>
+    </linearGradient>
+  </defs>
+  <!-- Simple mustache icon -->
+  <path fill="url(#gold)" d="M8 22 C8 14 16 12 24 14 C32 12 40 14 40 22 C40 26 36 28 24 26 C12 28 8 26 8 22 Z"/>
+  <!-- Text -->
+  <text x="56" y="26" font-family="Georgia, serif" font-size="20" font-weight="bold" fill="#1a1a1a">Gents</text>
+  <text x="56" y="40" font-family="Georgia, serif" font-size="12" fill="#1a1a1a" letter-spacing="0.5">Salon &amp; Spa</text>
+  <rect x="56" y="43" width="80" height="2" fill="url(#gold)" rx="1"/>
+</svg>

@@ -6,9 +6,9 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="Beauty Salon – Contact us">
-    <title>Contact | Beauty Salon</title>
-	<link rel="shortcut icon" type="images/png" href="assets/images/favicon.png">
+<meta name="description" content="Gents Salon & Spa – Contact us or request an appointment">
+    <title>Contact | Gents Salon & Spa</title>
+	<link rel="shortcut icon" type="image/png" href="assets/images/logo3.png">
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400;500;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
@@ -44,32 +44,32 @@
 					<div class="row align-items-center">                            
 						<div class="col-xl-3">
 							<a class="navbar-brand d-none d-xl-block" href="index.html">
-								<img src="assets/images/logo.png" alt="Beauty Salon">
+								<img src="assets/images/logo3.png" alt="Gents Salon & Spa" class="site-logo-header">
 							</a>                     
 						</div><!-- col-3 -->                                    
 						<div class="col-xl-9">
 							<div class="row gy-4 p-30 p-xl-0">
 								<div class="col-12 col-xl-3">
-<a href="tel:+2348123456789">
+<a href="tel:+2347077195098">
 										<p class="text-uppercase text-primary mb-lg-2">any queries call</p>
-										<h6 class="small">+2348123456789</h6>
+										<h6 class="small">+2347077195098</h6>
 									</a>
 								</div><!-- col-lg-3 -->                                           
 								<div class="col-12 col-xl-3 px-xl-0">
 									<span class="topbar1-contact d-flex align-items-center gap-3">
 										<div class="topbar1-icons"><i class="fa-sharp fa-solid fa-house"></i></div>								
 										<a href="contact.html">
-											<p class="text-primary mb-1">No3, Ake street </p>
-											<p class="small mb-0">Abeokuta, Ogun State</p>
+											<p class="text-primary mb-1">3rd Opp. St. Peter's, </p>
+											<p class="small mb-0">Ake, Abeokuta.</p>
 										</a>
 									</span>
 								</div> <!-- col-lg-3 -->                                            
 								<div class="col-12 col-xl-3 px-xl-0">
 									<span class="topbar1-contact d-flex align-items-center gap-3">
 										<div class="topbar1-icons"><i class="fa-regular fa-envelope"></i></div>								
-										<a href="mailto:hello@beautysalon.com">
+										<a href="mailto:hello@altair-attic.com">
 											<p class="text-primary mb-1">Send your mail</p>
-											<p class="small mb-0">hello@beautysalon.com</p>
+											<p class="small mb-0">hello@altair-attic.com</p>
 										</a>
 									</span>
 								</div> <!-- col-lg-3 -->                                            
@@ -104,7 +104,7 @@
 								<a class="nav-link position-relative" href="#" data-bs-toggle="modal" data-bs-target="#modalBase" aria-label="Search"><i class="fa-solid fa-magnifying-glass"></i></a>                  
 							</li>
                             <li class="nav-item ms-xl-auto text-center">
-                                <a class="nav-link btn-header" href="booking.html">Book Appointment</a>
+                                <a class="nav-link btn-header" href="contact.html">Book Appointment</a>
                             </li>
                         </ul>            
 					</div>                
@@ -118,7 +118,7 @@
 				<i class="fa-solid fa-circle-info"></i>
 			</span>             
             <a class="navbar-brand me-0" href="index.html">
-                <img src="assets/images/logo2.png" alt="Beauty Salon">
+                <img src="assets/images/logo3.png" alt="Gents Salon & Spa" class="site-logo-header">
             </a>		
 				
 			<button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#navContentDark" aria-controls="navContentDark" aria-expanded="false" aria-label="Toggle navigation">                
@@ -176,15 +176,15 @@
                 <div class="shape1 mb-4">
                     <i class="flaticon flaticon-mustache-shape"></i>
                 </div>
-                <p class="lead">Get in touch by form, phone, or email. We’ll get back to you as soon as we can.</p>
+                <p class="lead">Request an appointment or get in touch by form, phone, or email. We’ll get back to you as soon as we can.</p>
             </div>
             <div id="form-message" class="alert d-none" role="alert" aria-live="polite"></div>
-            <form id="contact-form" action="api/send-contact.php" method="post" novalidate>
+            <form id="contact-form" action="api/send-inquiry.php" method="post" novalidate>
                 <div class="contact-form">
                     <div class="row gx-4 gy-30">
                         <div class="col-lg-6">
-                            <label for="contact-name" class="form-label">Name *</label>
-                            <input type="text" class="form-control" id="contact-name" name="name" required placeholder="Your name">
+                            <label for="contact-name" class="form-label">Full Name *</label>
+                            <input type="text" class="form-control" id="contact-name" name="name" required placeholder="Your full name">
                             <span class="text-danger small" id="contact-name-error"></span>
                         </div>
                         <div class="col-lg-6">
@@ -192,10 +192,28 @@
                             <input type="email" class="form-control" id="contact-email" name="email" required placeholder="you@example.com">
                             <span class="text-danger small" id="contact-email-error"></span>
                         </div>
-                        <div class="col-12">
-                            <label for="contact-subject" class="form-label">Subject *</label>
-                            <input type="text" class="form-control" id="contact-subject" name="subject" required placeholder="Subject">
-                            <span class="text-danger small" id="contact-subject-error"></span>
+                        <div class="col-lg-6">
+                            <label for="contact-phone" class="form-label">Phone *</label>
+                            <input type="tel" class="form-control" id="contact-phone" name="phone" required placeholder="Your phone number">
+                            <span class="text-danger small" id="contact-phone-error"></span>
+                        </div>
+                        <div class="col-lg-6">
+                            <label for="contact-service" class="form-label">Service of Interest</label>
+                            <select class="form-control form-select" id="contact-service" name="service" aria-label="Service of interest">
+                                <option value="">Select a service</option>
+                                <option value="Haircuts &amp; Styling">Haircuts &amp; Styling</option>
+                                <option value="Beard Grooming &amp; Sculpting">Beard Grooming &amp; Sculpting</option>
+                                <option value="Luxury Shaves &amp; Line-Ups">Luxury Shaves &amp; Line-Ups</option>
+                                <option value="Hair &amp; Scalp Treatments">Hair &amp; Scalp Treatments</option>
+                                <option value="Spa &amp; Relaxation">Spa &amp; Relaxation</option>
+                                <option value="Grooming Packages">Grooming Packages</option>
+                            </select>
+                            <span class="text-danger small" id="contact-service-error"></span>
+                        </div>
+                        <div class="col-lg-6">
+                            <label for="contact-datetime" class="form-label">Preferred Date/Time <small class="text-muted">(optional)</small></label>
+                            <input type="text" class="form-control" id="contact-datetime" name="datetime" placeholder="e.g. Saturday 2pm">
+                            <span class="text-danger small" id="contact-datetime-error"></span>
                         </div>
                         <div class="col-12">
                             <label for="contact-message" class="form-label">Message *</label>
@@ -205,7 +223,7 @@
                     </div>
                 </div>
                 <div class="text-center mt-4">
-                    <button type="submit" class="btn btn-secondary">Submit</button>
+                    <button type="submit" class="btn btn-secondary">Send Inquiry</button>
                 </div>
             </form>
             <div class="contact-home-3 pt-50">
@@ -218,8 +236,7 @@
                                 </div>
                                 <div>
                                     <h5 class="card-title text-uppercase fw-normal">phone</h5>
-                                    <h6>+2348123456789</h6>
-                                    <h6>+2348123456789</h6>
+                                    <h6>+2347077195098</h6>
                                 </div>                        
                             </div>
                         </div>
@@ -233,7 +250,7 @@
                                 </div>
                                 <div>
                                     <h5 class="card-title text-uppercase fw-normal">location</h5>
-                                    <h6>No3, Ake street, Abeokuta, Ogun State</h6>
+                                    <h6>3rd floor, Opposite Cathedral of St. Peter Ang. Sec. Sch, Along Oba Ademola Maternity Hospital, Ake, Abeokuta.</h6>
                                 </div>                                                
                             </div>
                         </div>
@@ -247,7 +264,7 @@
                                 </div>
                                 <div>
                                     <h5 class="card-title text-uppercase fw-normal">email</h5>
-                                    <a href="mailto:hello@beautysalon.com"><h6>hello@beautysalon.com</h6></a>   
+                                    <a href="mailto:hello@altair-attic.com"><h6>hello@altair-attic.com</h6></a>   
                                 </div>
                                                      
                             </div>
@@ -269,9 +286,9 @@
         <div class="container">
             <div class="row pb-50 gy-5 gx-50">
                 <div class="col-lg-4">
-                    <a class="logo-brand" href="index.html"><img src="assets/images/logo2.png" alt="Beauty Salon"></a>
+                    <a class="logo-brand" href="index.html"><img src="assets/images/logo3.png" alt="Gents Salon & Spa" class="site-logo-footer"></a>
                     <div class="saparator2 my-3"></div>
-                    <p>These days are Happy and Free these days are all share them with me baby the Brady Bunch the Brady Bunch at the way we all became the Brady Bunch Flipper Flipper.</p>
+                    <p>Gents Salon &amp; Spa offers premium men's grooming and spa. Request an appointment or visit us—we'd love to meet you.</p>
                     <a href="contact.html" class="btn btn-primary">contact us</a>
                 </div>
                 <!-- col -->
@@ -281,19 +298,15 @@
                     <div class="row row-cols-1 row-cols-sm-2">
                         <div class="col side-border">
                             <ul class="list-unstyled d-grid gap-3">
-                                <li class="text-primary">Monday to Thursday</li>
-                                <li>7.00AM to 12.00PM</li>
-                                <li>1.00PM to 4.00PM</li>
-                                <li>5.00PM to 8.00PM</li>
+                                <li class="text-primary">Monday – Saturday</li>
+                                <li>9:00 AM – 8:00 PM</li>
                             </ul>
                         </div>
                         <!-- col -->
                         <div class="col">
                             <ul class="list-unstyled d-grid gap-3">
-                                <li class="text-primary">Monday to Thursday</li>
-                                <li>7.00AM to 12.00PM</li>
-                                <li>1.00PM to 4.00PM</li>
-                                <li>5.00PM to 8.00PM</li>
+                                <li class="text-primary">Sunday</li>
+                                <li>10:00 AM – 6:00 PM</li>
                             </ul>
                         </div>
                         <!-- col -->
@@ -305,7 +318,7 @@
                 <div class="col-lg-4">
                     <h5 class="footer-title text-uppercase">newsletter</h5>
                     <div class="saparator2 my-3"></div>
-                    <p>The Brady Bunch that's way we all became the Brady Bunch you see is smarter Flipper.</p>
+                    <p>Get tips, promos, and news from Gents Salon &amp; Spa. No spam, just the good stuff.</p>
                     <form action="#" class="cart-btn">
 						<div class="input-group mb-3">
 							<input type="email" class="form-control" placeholder="Your email" aria-label="Your email" required>
@@ -318,7 +331,7 @@
                             <li><a href="#" aria-label="facebook-icon"><i class="fa-brands fa-facebook-f"></i></a></li>
                             <li><a href="#" aria-label="twitter-icon"><i class="fa-brands fa-twitter"></i></a></li>
                             <li><a href="#" aria-label="google-plus-icon"><i class="fa-brands fa-google-plus-g"></i></a></li>
-                            <li><a href="#" aria-label="behance-icon"><i class="fa-brands fa-behance"></i></a></li>
+                            <li><a href="#" aria-label="whatsapp-icon"><i class="fa-brands fa-whatsapp"></i></a></li>
                             <li><a href="#" aria-label="instagram-icon"><i class="fa-brands fa-instagram"></i></a></li>
                         </ul>
                     </div>
@@ -334,7 +347,7 @@
 			<div class="container">
 				<div class="row gy-3">              
 					<div class="col-12">
-						<p class="copyright small text-uppercase mb-0">Beauty Salon ©Copyrights 2026. All Rights Reserved</p>
+						<p class="copyright small text-uppercase mb-0">©️ 2026 Gents Salon &amp; Spa. All rights reserved. | Site by Altair Attic limited</p>
 					</div>
 				</div>
 			</div><!-- .container -->          
