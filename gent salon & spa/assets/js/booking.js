@@ -1,6 +1,6 @@
 /**
- * Beauty Salon – booking.js
- * Client-side validation, submit to PHP, show success/error
+ * Gents Salon & Spa – booking.js
+ * Client-side validation, submit to external API
  */
 (function () {
   "use strict";
@@ -29,6 +29,7 @@
     formMessage.className =
       "alert alert-" + (type === "success" ? "success" : "danger");
     formMessage.setAttribute("role", "alert");
+    formMessage.classList.remove("d-none");
   }
 
   function clearMessage() {
@@ -104,37 +105,78 @@
       submitBtn.textContent = "Sending…";
     }
 
-    var formData = new FormData(form);
-    var action = form.getAttribute("action") || "api/send-booking.php";
+    // Collect form data and map to API's expected structure
+    var service = form.querySelector('[name="service"]').value;
+    var date = form.querySelector('[name="date"]').value;
+    var time = form.querySelector('[name="time"]').value;
+    var notes = form.querySelector('[name="notes"]').value;
 
-    fetch(action, {
+    // Create subject from service, date, and time
+    var subject = "Booking Request: " + service;
+    if (date && time) {
+      subject += " on " + date + " at " + time;
+    }
+
+    // Create message from notes and booking details
+    var message = "Service: " + service + "\n";
+    message += "Preferred Date: " + date + "\n";
+    message += "Preferred Time: " + time + "\n";
+    if (notes) {
+      message += "\nAdditional Notes:\n" + notes;
+    }
+
+    var formData = {
+      name: form.querySelector('[name="name"]').value,
+      email: form.querySelector('[name="email"]').value,
+      phone: form.querySelector('[name="phone"]').value,
+      subject: subject,
+      message: message,
+    };
+
+    // Use the external API endpoint
+    var apiUrl = "https://demo.altairattic.net/hotel-two/api/contact";
+
+    fetch(apiUrl, {
       method: "POST",
-      body: formData,
-      headers: { "X-Requested-With": "XMLHttpRequest" },
+      body: JSON.stringify(formData),
+      headers: {
+        "Content-Type": "application/json",
+        "Accept": "application/json",
+      },
     })
       .then(function (res) {
-        return res.json().catch(function () {
-          return { success: false, message: "Invalid response from server." };
-        });
+        // Check if response is OK (status 200-299)
+        if (!res.ok) {
+          // Try to get error message from response
+          return res.json().then(
+            function (errorData) {
+              throw new Error(errorData.message || "Server returned error: " + res.status);
+            },
+            function () {
+              throw new Error("Server returned error: " + res.status);
+            }
+          );
+        }
+        return res.json();
       })
       .then(function (data) {
-        if (data.success) {
+        if (data.success || data.status === "success") {
           showMessage(
             "success",
-            "Your booking request has been sent. We’ll confirm shortly.",
+            "Your booking request has been sent. We'll confirm shortly."
           );
           form.reset();
         } else {
           showMessage(
             "error",
-            data.message || "Something went wrong. Please try again.",
+            data.message || "Something went wrong. Please try again."
           );
         }
       })
-      .catch(function () {
+      .catch(function (error) {
         showMessage(
           "error",
-          "Unable to send. Check your connection or try again later.",
+          error.message || "Unable to send. Check your connection or try again later."
         );
       })
       .finally(function () {
