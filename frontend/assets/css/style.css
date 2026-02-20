@@ -50,7 +50,7 @@
   --bs-black-rgb: 0, 0, 0;
   --bs-body-color-rgb: 119, 119, 119;
   --bs-body-bg-rgb: 255, 255, 255;
-  --bs-font-sans-serif: Roboto, "Helvetica Neue", "Noto Sans", "Liberation Sans", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --bs-font-sans-serif: 'Inter', system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
   --bs-font-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
   --bs-gradient: linear-gradient(180deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0));
   --bs-body-font-family: var(--bs-font-sans-serif);
@@ -122,7 +122,7 @@ h6,
 .h6 {
   margin-top: 0;
   margin-bottom: 0.5rem;
-  font-family: var(--bs-headings-font-family, "Roboto Slab", serif);
+  font-family: 'Montserrat', sans-serif;
   font-weight: 700;
   line-height: 1.2;
   color: var(--bs-headings-color, #212529);
@@ -22926,7 +22926,7 @@ a.navbar-toggler {
 .review h5::before,
 .review .h5::before {
   content: "“";
-  font-family: "Droid Serif", serif;
+  font-family: "Playfair Display", serif;
   font-size: 50px;
   left: 0;
   position: absolute;
@@ -22940,7 +22940,7 @@ a.navbar-toggler {
 .review h5::after,
 .review .h5::after {
   content: "“";
-  font-family: "Droid Serif", serif;
+  font-family: "Playfair Display", serif;
   font-size: 50px;
   left: 0;
   position: absolute;
@@ -23934,3 +23934,111 @@ footer .copyright-bar .border-top {
 }
 
 /*# sourceMappingURL=style.css.map */
+/* Sticky Booking Button */
+.sticky-booking-btn {
+  position: fixed;
+  bottom: 100px;
+  right: 30px;
+  background-color: var(--bs-primary);
+  color: white !important;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  z-index: 9999;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s ease;
+  opacity: 0;
+  visibility: hidden;
+}
+
+.sticky-booking-btn.show {
+  opacity: 1;
+  visibility: visible;
+}
+
+.sticky-booking-btn:hover {
+  background-color: #212529;
+  color: var(--bs-primary) !important;
+  transform: translateY(-5px);
+}
+
+.sticky-booking-btn i {
+  color: inherit;
+}
+
+/* Tooltip for the button */
+.sticky-booking-btn::before {
+  content: "Book Now";
+  position: absolute;
+  right: 70px;
+  background: #212529;
+  color: white;
+  padding: 5px 15px;
+  border-radius: 5px;
+  font-size: 14px;
+  white-space: nowrap;
+  opacity: 0;
+  transition: 0.3s;
+  pointer-events: none;
+}
+
+.sticky-booking-btn:hover::before {
+  opacity: 1;
+}
+
+@media (max-width: 576px) {
+  .sticky-booking-btn {
+    width: 50px;
+    height: 50px;
+    bottom: 90px;
+    right: 20px;
+    font-size: 20px;
+  }
+
+  .sticky-booking-btn::before {
+    display: none;
+  }
+}
+
+/* Draggable state for booking button */
+.sticky-booking-btn {
+  cursor: move;
+  touch-action: none;
+  user-select: none;
+}
+
+.sticky-booking-btn.dragging {
+  transition: none !important;
+  transform: scale(1.1);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  opacity: 0.9 !important;
+}
+
+/* Popping and Glowing Animation */
+@keyframes buttonGlow {
+  0% {
+    transform: scale(1);
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+  }
+
+  50% {
+    transform: scale(1.2);
+    box-shadow: 0 0 30px var(--bs-primary), 0 0 50px var(--bs-primary);
+    background-color: #212529;
+    color: var(--bs-primary) !important;
+  }
+
+  100% {
+    transform: scale(1);
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+  }
+}
+
+.sticky-booking-btn.attention-glow {
+  animation: buttonGlow 1.5s ease-in-out infinite;
+  z-index: 10000;
+}
