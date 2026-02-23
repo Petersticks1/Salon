@@ -50,7 +50,7 @@
   --bs-black-rgb: 0, 0, 0;
   --bs-body-color-rgb: 119, 119, 119;
   --bs-body-bg-rgb: 255, 255, 255;
-  --bs-font-sans-serif: 'Inter', system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --bs-font-sans-serif: acumin-pro, "Acumin Pro", "Helvetica Neue", Helvetica, Arial, sans-serif, helvetica, arial, acumin-pro-wide, "Acumin Pro Wide", -apple-system, system-ui;
   --bs-font-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
   --bs-gradient: linear-gradient(180deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0));
   --bs-body-font-family: var(--bs-font-sans-serif);
@@ -122,7 +122,7 @@ h6,
 .h6 {
   margin-top: 0;
   margin-bottom: 0.5rem;
-  font-family: 'Montserrat', sans-serif;
+  font-family: acumin-pro, "Acumin Pro", "Helvetica Neue", Helvetica, Arial, sans-serif, helvetica, arial, acumin-pro-wide, "Acumin Pro Wide", -apple-system, system-ui;
   font-weight: 700;
   line-height: 1.2;
   color: var(--bs-headings-color, #212529);
@@ -22926,7 +22926,7 @@ a.navbar-toggler {
 .review h5::before,
 .review .h5::before {
   content: "“";
-  font-family: "Playfair Display", serif;
+  font-family: acumin-pro, "Acumin Pro", "Helvetica Neue", Helvetica, Arial, sans-serif, helvetica, arial, acumin-pro-wide, "Acumin Pro Wide", -apple-system, system-ui;
   font-size: 50px;
   left: 0;
   position: absolute;
@@ -22940,7 +22940,7 @@ a.navbar-toggler {
 .review h5::after,
 .review .h5::after {
   content: "“";
-  font-family: "Playfair Display", serif;
+  font-family: acumin-pro, "Acumin Pro", "Helvetica Neue", Helvetica, Arial, sans-serif, helvetica, arial, acumin-pro-wide, "Acumin Pro Wide", -apple-system, system-ui;
   font-size: 50px;
   left: 0;
   position: absolute;
